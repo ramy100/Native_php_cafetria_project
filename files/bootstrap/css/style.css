@@ -1,0 +1,10 @@
+
+table{
+    background-color: rgb(143, 140, 140);
+}
+.hideClass{
+     display:none;
+}
+.showClass{
+    display: table-row;
+}

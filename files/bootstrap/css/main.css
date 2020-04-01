@@ -1,0 +1,181 @@
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #af0949; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 230, 146); 
+}
+
+.content{
+color: white;
+}
+
+
+.content .left,.right{
+    
+    padding: 5px 40px;
+    margin-top: 10px;
+    
+}
+.content .left{
+    background-color:  #af0949;
+    border: 1px solid  #af0949;
+}
+.content .right{
+    color: black;
+
+}
+.content .right .users_list{
+    border-bottom:  rgb(255, 230, 146) 5px solid ;
+    padding-bottom: 50px;
+}
+
+
+
+.content .left .users_product ,.product, .Notes , .Rooms , .total_price,.confirm{
+    margin-top: 20px ;
+}
+/* nav{
+    background-color:  rgb(255, 230, 146);
+    font-size: 20px;
+   
+} */
+
+/* .navbar a {
+    color: white;
+}
+nav .img_user{
+    width: 50px;
+    height: 40px;
+    box-shadow: 3px 3px 10px black;
+} */
+/* nav .navbar-brand{
+    background:rgba(6, 82, 221) ;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 73px 75px 104px 15px;
+    -moz-border-radius: 73px 75px 104px 15px;
+    -webkit-border-radius: 73px 75px 104px 15px;
+    box-shadow: 7px 7px 10px red,-7px -7px 10px blue,10px 10px 10px black;
+    animation: logo infinite 2s alternate ;
+    z-index: 5;
+    border:4px solid white
+
+} */
+
+/* nav .nav-item a{
+    border-right: 1px solid  rgb(6, 82, 221) ;
+    color:rgba(6, 82, 221);
+    text-shadow: 2px 2px 2px white;
+    
+}
+nav .nav-item {
+    margin-left: 15px;
+}
+nav .navbar-brand span{
+    color:  rgb(255, 230, 146);
+} */
+
+.content .right .img_product{
+    width: 70px;
+    height: 100px;
+}
+.content .right .product{
+    position: relative;
+   
+    
+}
+
+.content .right .product .price{
+    position: absolute;
+    border: 1px solid #af0949;
+    top: 1%;
+    left: 60%;
+    padding:1% 20%;
+    background-color:  rgb(255, 230, 146);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.content select , option {
+    padding:10px 30%;
+    cursor: pointer;
+
+}
+.content .right select{
+    background-color:#af0949 ;
+    color: white;
+    font-size: 21px;
+    margin-top: 13px;
+}
+ .product_name{
+    width: 100px;
+}
+
+.left .users_product{
+    overflow-y: auto;
+    max-height: 200px;
+    background: white;
+    padding: 30px;
+}
+
+.left .users_product .no_product{
+    color: #af0949 ;
+    font-size: 22px
+}
+.left .product_of_user{
+    background:  rgb(255, 230, 146);
+}
+
+.content .left input[type='number']{
+    width: 30%;
+    max-height: 30px;
+    text-indent: 10px;
+    font-size: 20px;
+}
+
+.content .left .cancel{
+
+    font-size: 25px;
+    background: #af0949;
+    padding: 1px 5px;
+    margin-left: 4%;
+    color:  rgb(255, 230, 146);
+    cursor: pointer
+
+}
+/* .content .marker{
+font-size: 24px;
+padding: 5px;
+font-weight: bolder;
+border-radius: 34px 50px 20px 34px;
+background:  rgb(255, 230, 146);
+text-align: center;
+color:rgba(6, 82, 221);
+} */
+
+.right .img_fixed{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+.right .img_product:hover{
+    animation: rotating 1s;
+    cursor: pointer;
+
+}
+
+input[value='Confirm']{
+    padding: 6px 10%;
+    border:2px solid white;
+}
+
+
