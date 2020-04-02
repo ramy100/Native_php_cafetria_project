@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2020 at 09:34 AM
+-- Generation Time: Apr 02, 2020 at 10:45 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -36,6 +36,14 @@ CREATE TABLE `orders` (
   `status` enum('not confirmed yet','proccessing','out for deliver','canceled') DEFAULT 'not confirmed yet'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `notes`, `date`, `status`) VALUES
+(18, 4, 'one tps sugar', '2020-04-02', 'not confirmed yet'),
+(19, 4, 'toto kteeer lw sm7t', '2020-04-02', 'not confirmed yet');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +55,17 @@ CREATE TABLE `order_products` (
   `product_id` int(11) NOT NULL,
   `quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_products`
+--
+
+INSERT INTO `order_products` (`order_id`, `product_id`, `quantity`) VALUES
+(18, 5, 1),
+(18, 7, 2),
+(18, 10, 1),
+(19, 5, 1),
+(19, 10, 3);
 
 -- --------------------------------------------------------
 
@@ -74,7 +93,8 @@ INSERT INTO `products` (`id`, `product_name`, `category_id`, `price`, `product_i
 (10, 'rara', 1, 12, '2244.jpg'),
 (11, 'dsadas', 1, 1213, '9997660-g60uwjeabld21-1549236234-728-44ba4ad12a-1550063061.jpg'),
 (13, 'dasdas', 1, 12, 'no_img.png'),
-(14, 'sasdsd', 1, 123, 'no_img.png');
+(14, 'sasdsd', 1, 123, 'no_img.png'),
+(15, 'asd', 1, 122, 'no_img.png');
 
 -- --------------------------------------------------------
 
@@ -115,7 +135,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_name`, `image`, `email`, `password`, `room_number`, `ext`) VALUES
-(4, 'ramy', 'no-image.jpg', 'ramy@ramy.com', '123', 123456, 123456);
+(4, 'ramy', 'no-image.jpg', 'ramy@ramy.com', '123', 123456, 123456),
+(13, 'asdasd', '521.jpg', 'asd@asd.com', '1s3ad132sa', 123, 12),
+(14, 'asddsa', 'no_img.png', 'sdaasdas@sdaasd.com', 'dsa2123d', 2313, 213);
 
 --
 -- Indexes for dumped tables
@@ -164,13 +186,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `product_category`
@@ -182,7 +204,7 @@ ALTER TABLE `product_category`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
