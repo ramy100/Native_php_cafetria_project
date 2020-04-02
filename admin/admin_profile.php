@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin profile</title>
 </head>
-<?php include 'partial.php'; ?>
+<?php include '../partials/admin_partial.php'; ?>
 
 <body>
 

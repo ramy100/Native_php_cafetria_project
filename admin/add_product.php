@@ -27,7 +27,7 @@ if ($mysqli->connect_errno) {
   <link rel="stylesheet" type="text/css" href="../files/bootstrap/css/bootstrap.css">
   <script src="../files/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<?php include 'partial.php'; ?>
+<?php include '../partials/admin_partial.php'; ?>
 
 <body>
   <div class="container h-100 d-flex justify-content-center">

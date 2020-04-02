@@ -1,15 +1,12 @@
 <?php
 class Product
 {
+
     public static function insert($product_name, $price, $category)
     {
         $allowed_image_extension = ["png", "jpg", "jpeg", ""];
         $path_parts = pathinfo("{$_FILES["image"]["name"]}");
-        $mysqli = new mysqli("localhost", "root", "", "my_cafeteria");
-        if ($mysqli->connect_errno) {
-            echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-            exit();
-        };
+        require 'database.php';
         if (!in_array($path_parts['extension'], $allowed_image_extension)) {
             $sql = "INSERT INTO products (product_name, price,category_id,product_image) VALUES ('{$product_name}',{$price},'{$category}','no_img.png')";
             $mysqli->query($sql);
@@ -28,5 +25,11 @@ class Product
             $sql = "INSERT INTO products (product_name, price,category_id,product_image) VALUES ('{$product_name}',{$price},'{$category}','no_img.png')";
             $mysqli->query($sql);
         }
+    }
+    public static function get_products()
+    {
+        require 'database.php';
+        $sql = "SELECT * FROM `products`";
+        return $mysqli->query($sql);
     }
 }

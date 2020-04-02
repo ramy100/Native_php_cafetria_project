@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2020 at 09:30 PM
+-- Generation Time: Apr 02, 2020 at 09:34 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -32,19 +32,9 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `notes` text NOT NULL,
-  `date` date NOT NULL,
-  `status` enum('processing','out of delivery','Done') DEFAULT NULL
+  `date` date DEFAULT current_timestamp(),
+  `status` enum('not confirmed yet','proccessing','out for deliver','canceled') DEFAULT 'not confirmed yet'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `user_id`, `notes`, `date`, `status`) VALUES
-(4, 2, ' 1 sugar', '2020-03-17', 'out of delivery'),
-(5, 1, ' fkjhgyf', '2020-03-31', 'out of delivery'),
-(9, 3, 'hot', '2020-03-18', 'processing'),
-(10, 2, ' cold', '2020-03-17', 'out of delivery');
 
 -- --------------------------------------------------------
 
@@ -77,9 +67,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `category_id`, `price`, `product_image`) VALUES
-(1, 'tea', 1, 11, 'tea.png'),
-(3, 'coffee', 1, 12, 'coffee.png'),
-(4, 'cola', 1, 5, 'cola.png');
+(5, 'toto', 1, 12, 'download (2).jpg'),
+(6, 'dasd', 1, 123, 'download (2).jpg'),
+(7, 'dsad', 1, 12, 'download (2).jpg'),
+(8, 'dsa', 1, 122, 'no_img.png'),
+(10, 'rara', 1, 12, '2244.jpg'),
+(11, 'dsadas', 1, 1213, '9997660-g60uwjeabld21-1549236234-728-44ba4ad12a-1550063061.jpg'),
+(13, 'dasdas', 1, 12, 'no_img.png'),
+(14, 'sasdsd', 1, 123, 'no_img.png');
 
 -- --------------------------------------------------------
 
@@ -111,7 +106,6 @@ CREATE TABLE `users` (
   `image` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `admin` int(1) NOT NULL DEFAULT 0,
   `room_number` int(255) NOT NULL,
   `ext` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -120,10 +114,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `image`, `email`, `password`, `admin`, `room_number`, `ext`) VALUES
-(1, 'admin', '', 'amirareda.iti.intake40@gmail.com', '123', 1, 12254543, 76743),
-(2, 'reda', '', 'reda@hh.com', '123456', 0, 656435424, 78575),
-(3, 'ahmed', '', 'ahmed@gmail.com', 'iti123456', 0, 122545976, 76686743);
+INSERT INTO `users` (`id`, `user_name`, `image`, `email`, `password`, `room_number`, `ext`) VALUES
+(4, 'ramy', 'no-image.jpg', 'ramy@ramy.com', '123', 123456, 123456);
 
 --
 -- Indexes for dumped tables
@@ -172,13 +164,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `product_category`
@@ -190,7 +182,7 @@ ALTER TABLE `product_category`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
