@@ -55,7 +55,7 @@
           <form class="recipt" method="POST" action="user_controller.php">
 
             <textarea class="form-control" name="notes" id="exampleFormControlTextarea1" rows="3"></textarea>
-            <button type="submit">Confirm</button>
+            <button name="make_order" type="submit">Confirm</button>
           </form>
         </div>
         <div class="col-8">

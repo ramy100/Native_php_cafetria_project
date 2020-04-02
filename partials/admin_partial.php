@@ -4,8 +4,10 @@ if (!isset($_SESSION['role'])) {
     header("Location:../login.php");
     exit();
 }
-if ($_SESSION['role'] != "admin")
-    header("Location:../login.php"); ?>
+if ($_SESSION['role'] != "admin") {
+    header("Location:../login.php");
+    exit();
+} ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <a class="navbar-brand" href="admin_profile.php">Welcome <span id="myname"><?php echo ($_SESSION["UserName"]); ?></span></a>
     <ul class="navbar-nav mr-5">
