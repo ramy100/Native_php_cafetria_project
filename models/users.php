@@ -27,4 +27,10 @@ class user
             $mysqli->query($sql);
         }
     }
+    public static function get_users()
+    {
+        require 'database.php';
+        $sql = "SELECT * FROM `users`";
+        return $mysqli->query($sql);
+    }
 }

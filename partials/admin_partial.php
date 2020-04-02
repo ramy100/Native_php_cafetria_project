@@ -21,7 +21,7 @@ if ($_SESSION['role'] != "admin")
         <li class="nav-item"><a class="navbar-brand" href="all_products.php">All products</a></li>
     </ul>
     <ul class="navbar-nav mr-5">
-        <li class="nav-item"><a class="navbar-brand" href="all users.php">all users</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="all_users.php">all users</a></li>
     </ul>
     <ul class="navbar-nav mr-5">
         <li class="nav-item"><a class="navbar-brand" href="checks.php">checks</a></li>

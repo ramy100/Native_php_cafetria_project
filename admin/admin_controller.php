@@ -83,6 +83,6 @@ if (isset($_POST["add_user"])) {
         exit();
     }
     user::create_user($_POST["user_name"], $_POST["email"], $_POST["password"], $_POST["room_number"], $_POST["ext"]);
-    header("Location:admin_profile.php");
+    header("Location:all_users.php");
     exit();
 }
