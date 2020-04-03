@@ -1,6 +1,7 @@
 <?php
 require('../models/product.php');
 require('../models/users.php');
+require('../models/category.php');
 session_start();
 if (!isset($_SESSION['role'])) {
     header("Location:../login.php");
@@ -49,6 +50,9 @@ if (isset($_POST["add_user"])) {
     $errors = [];
     $allowed_image_extension = ["png", "jpg", "jpeg", ""];
 }
+
+
+
 if (isset($_POST["add_user"])) {
     $errors = [];
     $allowed_image_extension = ["png", "jpg", "jpeg", ""];
@@ -84,5 +88,20 @@ if (isset($_POST["add_user"])) {
     }
     user::create_user($_POST["user_name"], $_POST["email"], $_POST["password"], $_POST["room_number"], $_POST["ext"]);
     header("Location:all_users.php");
+    exit();
+}
+
+if (isset($_POST["add_category"])) {
+    $errors = [];
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST["category_name"]) || $_POST["category_name"] == "") {
+        array_push($errors, "category_name");
+    }
+    if (!empty($errors)) {
+        header("Location:add_category.php?errors=" . implode(";", $errors));
+        exit();
+    }
+    Category::insert($_POST["category_name"]);
+    echo ($_POST["category_name"]);
+    header("Location:all_products.php");
     exit();
 }

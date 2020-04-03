@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
+  <title>List products Page</title>
   <style>
     html,
     body {
@@ -20,21 +20,35 @@
   <?php include '../partials/admin_partial.php'; ?>
   <div class="container h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">
-      <div class="row">
-        <div class="card-columns">
-          <?php $result = Product::get_products() ?>
-          <?php while ($row = $result->fetch_assoc()) { ?>
-            <div class="card">
-              <img class="card-img-top" src="../files/images/<?php echo ($row['product_image']) ?>" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="text-center text-danger card-title"><?php echo ($row['product_name']) ?></h5>
-                <p class="text-center card-text"><span class="font-weight-bold">Category:</span> <?php echo ($row['category_id']) ?></p>
-                <p class="text-center card-text"><span class="font-weight-bold">Price</span>: <?php echo ($row['price']) ?></small></p>
-              </div>
-            </div>
-          <?php } ?>
+      <h1 class="text-danger text-center">All products</h1>
+      <?php $result = Product::get_products();
+      if ($result->num_rows == 0) {
+        echo ('<h3 class="text-center">Empty</h3>');
+      } else { ?>
+        <div class="row">
+          <table class="table table-hover col-12">
+            <thead>
+              <tr>
+                <th class="text-danger">Product Name</th>
+                <th class="text-danger">Category</th>
+                <th class="text-danger">Image</th>
+                <th class="text-danger">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <?php while ($row = $result->fetch_assoc()) { ?>
+                <tr>
+                  <th><?php echo ($row['product_name']) ?></th>
+                  <td><?php echo ($row['category_name']) ?></td>
+                  <td><img width="100px" height="100px" src="../files/images/<?php echo ($row['product_image']) ?>" alt="Card image cap"></td>
+                  <td><?php echo ($row['price']) ?></td>
+                </tr>
+              <?php } ?>
+            </tbody>
+          </table>
         </div>
-      </div>
+      <?php } ?>
     </div>
   </div>
 </body>

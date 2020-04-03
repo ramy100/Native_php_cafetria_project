@@ -29,7 +29,7 @@ class Product
     public static function get_products()
     {
         require 'database.php';
-        $sql = "SELECT * FROM `products`";
+        $sql = "SELECT p.product_name,p.price,pc.category_name,p.product_image FROM `products` as p , product_category as pc where p.category_id=pc.id";
         return $mysqli->query($sql);
     }
 }

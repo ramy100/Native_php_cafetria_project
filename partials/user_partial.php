@@ -14,16 +14,7 @@ if ($_SESSION['role'] != "user") {
         <li class="nav-item"><a class="navbar-brand" href="user_orders.php">My Orders</a></li>
     </ul>
     <ul class="navbar-nav mr-5">
-        <li class="nav-item"><a class="navbar-brand" href="#"> Add product</a></li>
-    </ul>
-    <ul class="navbar-nav mr-5">
-        <li class="nav-item"><a class="navbar-brand" href="#"> All products</a></li>
-    </ul>
-    <ul class="navbar-nav mr-5">
-        <li class="nav-item"><a class="navbar-brand" href="#"> all users</a></li>
-    </ul>
-    <ul class="navbar-nav mr-5">
-        <li class="nav-item"><a class="navbar-brand" href="#"> checks</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="new_order.php"> New Order</a></li>
     </ul>
     <form class="form-inline my-lg-0" style="position: absolute;right:10px;" action="../authenticator.php" method="post">
         <button class="btn btn-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>

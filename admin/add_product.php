@@ -29,6 +29,7 @@ if ($mysqli->connect_errno) {
 <body>
   <div class="container h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">
+      <h1 class="text-danger text-center">Add New product</h1>
       <form class="col" action="admin_controller.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="FirstName">Product</label>

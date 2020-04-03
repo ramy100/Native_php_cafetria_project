@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin profile</title>
+    <title>Admin Profile Page</title>
 </head>
 <?php include '../partials/style_files.php'; ?>
 
