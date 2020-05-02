@@ -79,7 +79,7 @@
                                 <img class="card-img-top" src="../files/images/<?php echo ($row['product_image']) ?>" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="text-center text-primary card-title"><?php echo ($row['product_name']) ?></h5>
-                                    <p class="text-center card-text"><span class="font-weight-bold">Category:</span> <?php echo ($row['category_id']) ?></p>
+                                    <p class="text-center card-text"><span class="font-weight-bold">Category:</span> <?php echo ($row['category_name']) ?></p>
                                     <p class="text-center card-text"><span class="font-weight-bold">Price</span>: <?php echo ($row['price']) ?></small></p>
                                 </div>
                             </div>
